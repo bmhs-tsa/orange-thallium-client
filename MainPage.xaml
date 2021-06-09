@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="orange_thallium.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:orange_thallium"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+    ui:ApplicationViewExtensions.ExtendViewIntoTitleBar="True"
+    mc:Ignorable="d"
+    Background="{ThemeResource HostBackground}">
+
+  <Grid>
+    <NavigationView x:Name="navigationView" ItemInvoked="navigationView_ItemInvoked" BackRequested="navigationView_BackRequested" PaneDisplayMode="LeftCompact" IsPaneOpen="False" IsBackEnabled="True">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Frame Grid.RowSpan="3" x:Name="mainFrame" x:FieldModifier="public" Visibility="{x:Bind mainFrameVisisblity}"/>
+        <ProgressRing Grid.Row="1" Visibility="{x:Bind progressRingVisibility}" IsActive="{x:Bind isLoading}" Height="150" Width="150" Foreground="{ThemeResource SystemBaseMediumColor}" />
+      </Grid>
+    </NavigationView>
+  </Grid>
+</Page>

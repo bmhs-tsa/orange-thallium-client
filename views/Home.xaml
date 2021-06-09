@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="orange_thallium.views.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:orange_thallium.views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+    </Grid.RowDefinitions>
+
+    <StackPanel Grid.Row="0" HorizontalAlignment="Center" Padding="10">
+      <TextBlock FontSize="36" HorizontalAlignment="Center">Orange Thallium</TextBlock>
+      <Image Source="/logo.png" Width="400"/>
+      <TextBlock FontSize="24" HorizontalAlignment="Center">An esports credential management system</TextBlock>
+    </StackPanel>
+
+    <StackPanel Grid.Row="1" HorizontalAlignment="Center" Padding="10">
+      <TextBlock FontSize="24" HorizontalAlignment="Center" Margin="0,50,0,0">Here's how it works:</TextBlock>
+
+      <StackPanel Margin="0,10,0,-1">
+        <TextBlock FontSize="20" Margin="0,5">1. <Hyperlink x:Name="login" Click="login_Click">Log in with your organization account</Hyperlink></TextBlock>
+        <TextBlock FontSize="20" Margin="0,5">2. <Hyperlink x:Name="startApp" Click="startApp_Click">Start an app through Orange Thallium</Hyperlink></TextBlock>
+        <TextBlock FontSize="20" Margin="0,5">3. We'll take care of logging you into the app</TextBlock>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</Page>
