@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
@@ -22,7 +22,10 @@ namespace orange_thallium.classes
         string bodyText = await response.Content.ReadAsStringAsync();
 
         //Parse as JSON
-        Error error = JsonConvert.DeserializeObject<Error>(bodyText);
+        Error error = JsonSerializer.Deserialize<Error>(bodyText, new JsonSerializerOptions
+        {
+          IncludeFields = true
+        });
 
         //Prompt the user
         ContentDialog dialog = new ContentDialog
